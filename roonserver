@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>roon-server</Name>
+  <Repository>ronch/roon-server</Repository>
+  <Registry>https://hub.docker.com/r/ronch/roon-server/~/dockerfile/</Registry>
+  <Network>host</Network>
+  <Privileged>true</Privileged>
+  <Support>https://hub.docker.com/r/ronch/roon-server/</Support>
+  <Overview>Ubuntu based image to run roon server&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Overview>
+  <Category>MediaApp:Music</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://community.roonlabs.com//roon-community-uploads.s3.amazonaws.com/original/1X/5dd5505bad619895c205dc1a52aef064fc1fa16f.png</Icon>
+  <ExtraParams/>
+  <DateInstalled>1462528252</DateInstalled>
+  <Description>Ubuntu based image to run roon server&#xD;
+&#xD;
+[b]Converted By Community Applications[/b]</Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/roon/Library</HostDir>
+      <ContainerDir>/var/roon</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user</HostDir>
+      <ContainerDir>/unraid</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/roon/Application</HostDir>
+      <ContainerDir>/opt</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="Roon Database" Target="/var/roon" Default="/mnt/user/appdata/roon/Library" Mode="rw" Description="Container Path: /var/roon" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/roon/Library</Config>
+  <Config Name="unRAID Share Path" Target="/unraid" Default="/mnt/user" Mode="rw" Description="Container Path: /unraid" Type="Path" Display="always" Required="false" Mask="false">/mnt/user</Config>
+  <Config Name="Roon Application" Target="/opt" Default="/mnt/user/appdata/roon/Application" Mode="rw" Description="Container Path: /opt" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/roon/Application</Config>
+</Container>
